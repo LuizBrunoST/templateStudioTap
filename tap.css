@@ -1,0 +1,415 @@
+/*=========================
+===========================
+==    TAP CSS 26.4.12    ==
+===========================
+===========================*/
+html{box-sizing:border-box}*,*:before,*:after{box-sizing:inherit}
+html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}
+article,aside,details,figcaption,figure,footer,header,main,menu,nav,section{display:block}summary{display:list-item}
+audio,canvas,progress,video{display:inline-block}progress{vertical-align:baseline}
+audio:not([controls]){display:none;height:0}[hidden],template{display:none}
+a{background-color:transparent}a:active,a:hover{outline-width:0}
+abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}
+b,strong{font-weight:bolder}dfn{font-style:italic}mark{background:#ff0;color:#000}
+small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
+sub{bottom:-0.25em}sup{top:-0.5em}figure{margin:1em 40px}img{border-style:none}
+code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}hr{box-sizing:content-box;height:0;overflow:visible}
+button,input,select,textarea,optgroup{font:inherit;margin:0}optgroup{font-weight:bold}
+button,input{overflow:visible}button,select{text-transform:none}
+button::-moz-focus-inner,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner{border-style:none;padding:0}
+button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring{outline:1px dotted ButtonText}
+fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:.35em .625em .75em}
+legend{color:inherit;display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto}
+[type=checkbox],[type=radio]{padding:0}
+[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}
+[type=search]::-webkit-search-decoration{-webkit-appearance:none}
+::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}
+html,body{font-family:Verdana,sans-serif;font-size:15px;line-height:1.5}html{overflow-x:hidden}
+h1{font-size:36px}h2{font-size:30px}h3{font-size:24px}h4{font-size:20px}h5{font-size:18px}h6{font-size:16px}
+.tap-serif{font-family:serif}.tap-sans-serif{font-family:sans-serif}.tap-cursive{font-family:cursive}.tap-monospace{font-family:monospace}
+h1,h2,h3,h4,h5,h6{font-family:"Segoe UI",Arial,sans-serif;font-weight:400;margin:10px 0}.tap-wide{letter-spacing:4px}
+hr{border:0;border-top:1px solid #eee;margin:20px 0}
+[type=search]{-webkit-appearance: textfield;appearance:textfield;outline-offset: -2px;}
+button,[type=button],[type=reset],[type=submit]{-webkit-appearance: button;appearance: button;}
+
+/*tapToast*/
+.taptoast-container{position: fixed;z-index: 9999;padding: 10px;}
+.taptoast-bottom{bottom:0;left:0;width:100%;}
+.taptoast-top-right{top:0;right:0;}
+.taptoast{background: #333;color: #fff;padding: 12px 16px;margin:5px;border-radius:6px;display: flex;justify-content: space-between;align-items: center;}
+.taptoast.success { background: #4CAF50; }
+.taptoast.error { background: #f44336; }
+.taptoast.warning { background: #ff9800; }
+.taptoast.info { background: #2196F3; }
+.taptoast-action{background: transparent;border: none;color: #00e5ff;cursor: pointer;font-weight: bold;}
+
+.tap-ads{width: 100%;min-height: 80px;}.tap-ads-error{color: red;font-size: 12px;}
+
+/*listChat*/
+.tap-list{width:100%;}
+.tap-list-item{display:flex;align-items:center;padding:12px;border-bottom:1px solid #eee;cursor:pointer;}
+.tap-list-item:hover {background:#f5f5f5;}
+.tap-avatar{width:45px;height:45px;border-radius:50%;object-fit:cover;margin-right:12px;}
+.tap-list-content{flex:1;}
+.tap-list-title{font-weight:bold;font-size:15px;}
+.tap-list-sub{font-size:13px;color: #666;}
+
+/* BARS */
+.tap-bar{display:flex;align-items:center;justify-content:space-between;height:50px;padding:0 10px;}
+.tap-bar-left,.tap-bar-center,.tap-bar-right{display:flex;align-items:center;}
+.tap-bar-center{flex:1;justify-content:center;font-weight:bold;}
+.tap-bar-item{padding:8px;cursor:pointer;}
+.tap-bar-item:hover{opacity: 0.8;}
+
+.tap-loading {position: fixed;top: 0;left: 0;width: 100%;height: 100%;background: rgba(0,0,0,0.5);display: flex;align-items: center;justify-content: center;z-index: 9999;}
+
+.tap-ul{list-style-type:none;padding:0;margin:0}.tap-ul li{padding:8px 16px;border-bottom:1px solid #ddd}.tap-ul li:last-child{border-bottom:none}
+
+/* SIDEBAR */
+.tap-sidebar {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    width: 260px;
+    height: 100%;
+    background: #fff;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.2);
+    z-index: 1000;
+    transition: 0.3s;
+    overflow-y: auto;
+}
+
+/* aberto */
+.tap-sidebar.open {
+    left: 0;
+}
+
+/* overlay */
+.tap-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    z-index: 999;
+    display: none;
+}
+
+.tap-overlay.show {
+    display: block;
+}
+
+/* header */
+.tap-sidebar-header {
+    padding: 20px;
+    font-weight: bold;
+    border-bottom: 1px solid #eee;
+}
+
+/* item */
+.tap-sidebar-item {
+    padding: 14px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+}
+
+.tap-sidebar-item:hover{background:#f5f5f5;}
+
+/**/
+.tap-zoom{transition: transform .2s;margin: 0 auto;}.tap-zoom:hover{-ms-transform: scale(1.5); /* IE 9 */-webkit-transform: scale(1.5); /* Safari 3-8 */transform: scale(1.5); }
+
+.tap-tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tap-tooltip-text {
+    position: absolute;
+    background: #111;
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 13px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.2s;
+    z-index: 999;
+}
+
+.tap-tooltip-text.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* POSIÇÕES */
+.tap-tooltip[data-pos="top"] .tap-tooltip-text {
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.tap-tooltip[data-pos="top"] .tap-tooltip-text::after {
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-color: #111 transparent transparent transparent;
+}
+
+.tap-tooltip[data-pos="bottom"] .tap-tooltip-text {
+    top: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.tap-tooltip[data-pos="bottom"] .tap-tooltip-text::after {
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-color: transparent transparent #111 transparent;
+}
+
+.tap-tooltip[data-pos="left"] .tap-tooltip-text {
+    right: 120%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.tap-tooltip[data-pos="left"] .tap-tooltip-text::after {
+    right: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-color: transparent #111 transparent transparent;
+}
+
+.tap-tooltip[data-pos="right"] .tap-tooltip-text {
+    left: 120%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.tap-tooltip[data-pos="right"] .tap-tooltip-text::after {
+    left: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-color: transparent transparent transparent #111;
+}
+
+.tap-image{max-width:100%;height:auto}img{vertical-align:middle}a{color:inherit}
+.tap-table,.tap-table-all{border-collapse:collapse;border-spacing:0;width:100%;display:table}.tap-table-all{border:1px solid #ccc}
+.tap-bordered tr,.tap-table-all tr{border-bottom:1px solid #ddd}.tap-striped tbody tr:nth-child(even){background-color:#f1f1f1}
+.tap-table-all tr:nth-child(odd){background-color:#fff}.tap-table-all tr:nth-child(even){background-color:#f1f1f1}
+.tap-hoverable tbody tr:hover,.tap-ul.tap-hoverable li:hover{background-color:#ccc}.tap-centered tr th,.tap-centered tr td{text-align:center}
+.tap-table td,.tap-table th,.tap-table-all td,.tap-table-all th{padding:8px 8px;display:table-cell;text-align:left;vertical-align:top}
+.tap-table th:first-child,.tap-table td:first-child,.tap-table-all th:first-child,.tap-table-all td:first-child{padding-left:16px}
+.tap-btn,.tap-button{border:none;display:inline-block;padding:8px 16px;vertical-align:middle;overflow:hidden;text-decoration:none;color:inherit;background-color:inherit;text-align:center;cursor:pointer;white-space:nowrap}
+.tap-btn:hover{box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19)}
+.tap-btn,.tap-button{-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}   
+.tap-disabled,.tap-btn:disabled,.tap-button:disabled{cursor:not-allowed;opacity:0.3}.tap-disabled *,:disabled *{pointer-events:none}
+.tap-btn.tap-disabled:hover,.tap-btn:disabled:hover{box-shadow:none}
+.tap-badge,.tap-tag{background-color:#000;color:#fff;display:inline-block;padding-left:8px;padding-right:8px;text-align:center}.tap-badge{border-radius:50%}
+
+
+.tap-tooltip,.tap-display-container{position:relative}.tap-tooltip .tap-text{display:none}.tap-tooltip:hover .tap-text{display:inline-block}
+.tap-ripple:active{opacity:0.5}.tap-ripple{transition:opacity 0s}
+.tap-input{padding:8px;display:block;border:none;border-bottom:1px solid #ccc;width:100%}
+.tap-select{padding:9px 0;width:100%;border:none;border-bottom:1px solid #ccc}
+.tap-dropdown-click,.tap-dropdown-hover{position:relative;display:inline-block;cursor:pointer}
+.tap-dropdown-hover:hover .tap-dropdown-content{display:block}
+.tap-dropdown-hover:first-child,.tap-dropdown-click:hover{background-color:#ccc;color:#000}
+.tap-dropdown-hover:hover > .tap-button:first-child,.tap-dropdown-click:hover > .tap-button:first-child{background-color:#ccc;color:#000}
+.tap-dropdown-content{cursor:auto;color:#000;background-color:#fff;display:none;position:absolute;min-width:160px;margin:0;padding:0;z-index:1}
+.tap-check,.tap-radio{width:24px;height:24px;position:relative;top:6px}
+
+.tap-bar-block .tap-dropdown-hover,.tap-bar-block .tap-dropdown-click{width:100%}
+.tap-bar-block .tap-dropdown-hover .tap-dropdown-content,.tap-bar-block .tap-dropdown-click .tap-dropdown-content{min-width:100%}
+.tap-bar-block .tap-dropdown-hover .tap-button,.tap-bar-block .tap-dropdown-click .tap-button{width:100%;text-align:left;padding:8px 16px}
+.tap-main,#main{transition:margin-left .4s}
+.tap-modal{z-index:3;display:none;padding-top:100px;position:fixed;left:0;top:0;width:100%;height:100%;overflow:auto;background-color:rgb(0,0,0);background-color:rgba(0,0,0,0.4)}
+.tap-modal-content{margin:auto;background-color:#fff;position:relative;padding:0;outline:0;width:600px}
+.tap-bar{width:100%;overflow:hidden}.tap-center .tap-bar{display:inline-block;width:auto}
+.tap-bar .tap-bar-item{padding:8px 16px;float:left;width:auto;border:none;display:block;outline:0}
+.tap-bar .tap-dropdown-hover,.tap-bar .tap-dropdown-click{position:static;float:left}
+.tap-bar .tap-button{white-space:normal}
+.tap-bar-block .tap-bar-item{width:100%;display:block;padding:8px 16px;text-align:left;border:none;white-space:normal;float:none;outline:0}
+.tap-bar-block.tap-center .tap-bar-item{text-align:center}.tap-block{display:block;width:100%}
+.tap-responsive{display:block;overflow-x:auto}
+.tap-container:after,.tap-container:before,.tap-panel:after,.tap-panel:before,.tap-row:after,.tap-row:before,.tap-row-padding:after,.tap-row-padding:before,
+.tap-cell-row:before,.tap-cell-row:after,.tap-clear:after,.tap-clear:before,.tap-bar:before,.tap-bar:after{content:"";display:table;clear:both}
+.tap-col,.tap-half,.tap-third,.tap-twothird,.tap-threequarter,.tap-quarter{float:left;width:100%}
+.tap-col.s1{width:8.33333%}.tap-col.s2{width:16.66666%}.tap-col.s3{width:24.99999%}.tap-col.s4{width:33.33333%}
+.tap-col.s5{width:41.66666%}.tap-col.s6{width:49.99999%}.tap-col.s7{width:58.33333%}.tap-col.s8{width:66.66666%}
+.tap-col.s9{width:74.99999%}.tap-col.s10{width:83.33333%}.tap-col.s11{width:91.66666%}.tap-col.s12{width:99.99999%}
+@media (min-width:601px){.tap-col.m1{width:8.33333%}.tap-col.m2{width:16.66666%}.tap-col.m3,.tap-quarter{width:24.99999%}.tap-col.m4,.tap-third{width:33.33333%}
+.tap-col.m5{width:41.66666%}.tap-col.m6,.tap-half{width:49.99999%}.tap-col.m7{width:58.33333%}.tap-col.m8,.tap-twothird{width:66.66666%}
+.tap-col.m9,.tap-threequarter{width:74.99999%}.tap-col.m10{width:83.33333%}.tap-col.m11{width:91.66666%}.tap-col.m12{width:99.99999%}}
+@media (min-width:993px){.tap-col.l1{width:8.33333%}.tap-col.l2{width:16.66666%}.tap-col.l3{width:24.99999%}.tap-col.l4{width:33.33333%}
+.tap-col.l5{width:41.66666%}.tap-col.l6{width:49.99999%}.tap-col.l7{width:58.33333%}.tap-col.l8{width:66.66666%}
+.tap-col.l9{width:74.99999%}.tap-col.l10{width:83.33333%}.tap-col.l11{width:91.66666%}.tap-col.l12{width:99.99999%}}
+.tap-rest{overflow:hidden}.tap-stretch{margin-left:-16px;margin-right:-16px}
+.tap-content,.tap-auto{margin-left:auto;margin-right:auto}.tap-content{max-width:980px}.tap-auto{max-width:1140px}
+.tap-cell-row{display:table;width:100%}.tap-cell{display:table-cell}
+.tap-cell-top{vertical-align:top}.tap-cell-middle{vertical-align:middle}.tap-cell-bottom{vertical-align:bottom}
+.tap-hide{display:none!important}.tap-show-block,.tap-show{display:block!important}.tap-show-inline-block{display:inline-block!important}
+@media (max-width:1205px){.tap-auto{max-width:95%}}
+@media (max-width:600px){.tap-modal-content{margin:0 10px;width:auto!important}.tap-modal{padding-top:30px}
+.tap-dropdown-hover.tap-mobile .tap-dropdown-content,.tap-dropdown-click.tap-mobile .tap-dropdown-content{position:relative}	
+.tap-hide-small{display:none!important}.tap-mobile{display:block;width:100%!important}.tap-bar-item.tap-mobile,.tap-dropdown-hover.tap-mobile,.tap-dropdown-click.tap-mobile{text-align:center}
+.tap-dropdown-hover.tap-mobile,.tap-dropdown-hover.tap-mobile .tap-btn,.tap-dropdown-hover.tap-mobile .tap-button,.tap-dropdown-click.tap-mobile,.tap-dropdown-click.tap-mobile .tap-btn,.tap-dropdown-click.tap-mobile .tap-button{width:100%}}
+@media (max-width:768px){.tap-modal-content{width:500px}.tap-modal{padding-top:50px}}
+@media (min-width:993px){.tap-modal-content{width:900px}.tap-hide-large{display:none!important}.tap-sidebar.tap-collapse{display:block!important}}
+@media (max-width:992px) and (min-width:601px){.tap-hide-medium{display:none!important}}
+@media (max-width:992px){.tap-sidebar.tap-collapse{display:none}.tap-main{margin-left:0!important;margin-right:0!important}.tap-auto{max-width:100%}}
+.tap-top,.tap-bottom{position:fixed;width:100%;z-index:1}.tap-top{top:0}.tap-bottom{bottom:0}
+.tap-overlay{position:fixed;display:none;width:100%;height:100%;top:0;left:0;right:0;bottom:0;background-color:rgba(0,0,0,0.5);z-index:2}
+.tap-display-topleft{position:absolute;left:0;top:0}.tap-display-topright{position:absolute;right:0;top:0}
+.tap-display-bottomleft{position:absolute;left:0;bottom:0}.tap-display-bottomright{position:absolute;right:0;bottom:0}
+.tap-display-middle{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%)}
+.tap-display-left{position:absolute;top:50%;left:0%;transform:translate(0%,-50%);-ms-transform:translate(-0%,-50%)}
+.tap-display-right{position:absolute;top:50%;right:0%;transform:translate(0%,-50%);-ms-transform:translate(0%,-50%)}
+.tap-display-topmiddle{position:absolute;left:50%;top:0;transform:translate(-50%,0%);-ms-transform:translate(-50%,0%)}
+.tap-display-bottommiddle{position:absolute;left:50%;bottom:0;transform:translate(-50%,0%);-ms-transform:translate(-50%,0%)}
+.tap-display-container:hover .tap-display-hover{display:block}.tap-display-container:hover span.tap-display-hover{display:inline-block}.tap-display-hover{display:none}
+.tap-display-position{position:absolute}
+.tap-circle{border-radius:50%}
+.tap-round-small{border-radius:2px}.tap-round,.tap-round-medium{border-radius:4px}.tap-round-large{border-radius:8px}.tap-round-xlarge{border-radius:16px}.tap-round-xxlarge{border-radius:32px}
+.tap-row-padding,.tap-row-padding>.tap-half,.tap-row-padding>.tap-third,.tap-row-padding>.tap-twothird,.tap-row-padding>.tap-threequarter,.tap-row-padding>.tap-quarter,.tap-row-padding>.tap-col{padding:0 8px}
+.tap-container,.tap-panel{padding:0.01em 16px}.tap-panel{margin-top:16px;margin-bottom:16px}
+.tap-grid{display:grid}.tap-grid-padding{display:grid;gap:16px}.tap-flex{display:flex}
+.tap-text-center{text-align:center}.tap-text-bold,.tap-bold{font-weight:bold}.tap-text-italic,.tap-italic{font-style:italic}
+.tap-code,.tap-codespan{font-family:Consolas,"courier new";font-size:16px}
+.tap-code{width:auto;background-color:#fff;padding:8px 12px;border-left:4px solid #4CAF50;word-wrap:break-word}
+.tap-codespan{color:crimson;background-color:#f1f1f1;padding-left:4px;padding-right:4px;font-size:110%}
+.tap-card,.tap-card-2{box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)}
+.tap-card-4,.tap-hover-shadow:hover{box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19)}
+.tap-spin{animation:tap-spin 2s infinite linear}@keyframes tap-spin{0%{transform:rotate(0deg)}100%{transform:rotate(359deg)}}
+.tap-animate-fading{animation:fading 10s infinite}@keyframes fading{0%{opacity:0}50%{opacity:1}100%{opacity:0}}
+.tap-animate-opacity{animation:opac 0.8s}@keyframes opac{from{opacity:0} to{opacity:1}}
+.tap-animate-top{position:relative;animation:animatetop 0.4s}@keyframes animatetop{from{top:-300px;opacity:0} to{top:0;opacity:1}}
+.tap-animate-left{position:relative;animation:animateleft 0.4s}@keyframes animateleft{from{left:-300px;opacity:0} to{left:0;opacity:1}}
+.tap-animate-right{position:relative;animation:animateright 0.4s}@keyframes animateright{from{right:-300px;opacity:0} to{right:0;opacity:1}}
+.tap-animate-bottom{position:relative;animation:animatebottom 0.4s}@keyframes animatebottom{from{bottom:-300px;opacity:0} to{bottom:0;opacity:1}}
+.tap-animate-zoom {animation:animatezoom 0.6s}@keyframes animatezoom{from{transform:scale(0)} to{transform:scale(1)}}
+.tap-animate-input{transition:width 0.4s ease-in-out}.tap-animate-input:focus{width:100%!important}
+.tap-opacity,.tap-hover-opacity:hover{opacity:0.60}.tap-opacity-off,.tap-hover-opacity-off:hover{opacity:1}
+.tap-opacity-max{opacity:0.25}.tap-opacity-min{opacity:0.75}
+.tap-greyscale-max,.tap-grayscale-max,.tap-hover-greyscale:hover,.tap-hover-grayscale:hover{filter:grayscale(100%)}
+.tap-greyscale,.tap-grayscale{filter:grayscale(75%)}.tap-greyscale-min,.tap-grayscale-min{filter:grayscale(50%)}
+.tap-sepia{filter:sepia(75%)}.tap-sepia-max,.tap-hover-sepia:hover{filter:sepia(100%)}.tap-sepia-min{filter:sepia(50%)}
+.tap-tiny{font-size:10px!important}.tap-small{font-size:12px!important}.tap-medium{font-size:15px!important}.tap-large{font-size:18px!important}
+.tap-xlarge{font-size:24px!important}.tap-xxlarge{font-size:36px!important}.tap-xxxlarge{font-size:48px!important}.tap-jumbo{font-size:64px!important}
+.tap-left-align{text-align:left!important}.tap-right-align{text-align:right!important}.tap-justify{text-align:justify!important}.tap-center{text-align:center!important}
+.tap-border-0{border:0!important}.tap-border{border:1px solid #ccc!important}
+.tap-border-top{border-top:1px solid #ccc!important}.tap-border-bottom{border-bottom:1px solid #ccc!important}
+.tap-border-left{border-left:1px solid #ccc!important}.tap-border-right{border-right:1px solid #ccc!important}
+.tap-topbar{border-top:6px solid #ccc!important}.tap-bottombar{border-bottom:6px solid #ccc!important}
+.tap-leftbar{border-left:6px solid #ccc!important}.tap-rightbar{border-right:6px solid #ccc!important}
+.tap-section,.tap-code{margin-top:16px!important;margin-bottom:16px!important}
+.tap-margin{margin:16px!important}.tap-margin-top{margin-top:16px!important}.tap-margin-bottom{margin-bottom:16px!important}
+.tap-margin-left{margin-left:16px!important}.tap-margin-right{margin-right:16px!important}
+.tap-padding-small{padding:4px 8px!important}.tap-padding{padding:8px 16px!important}.tap-padding-large{padding:12px 24px!important}
+.tap-padding-16{padding-top:16px!important;padding-bottom:16px!important}.tap-padding-24{padding-top:24px!important;padding-bottom:24px!important}
+.tap-padding-32{padding-top:32px!important;padding-bottom:32px!important}.tap-padding-48{padding-top:48px!important;padding-bottom:48px!important}
+.tap-padding-64{padding-top:64px!important;padding-bottom:64px!important}
+.tap-padding-top-64{padding-top:64px!important}.tap-padding-top-48{padding-top:48px!important}
+.tap-padding-top-32{padding-top:32px!important}.tap-padding-top-24{padding-top:24px!important}
+.tap-left{float:left!important}.tap-right{float:right!important}
+.tap-button:hover{color:#000!important;background-color:#ccc!important}
+.tap-transparent,.tap-hover-none:hover{background-color:transparent!important}
+.tap-hover-none:hover{box-shadow:none!important}
+/* Colors */
+.tap-amber,.tap-hover-amber:hover{color:#000!important;background-color:#ffc107!important}
+.tap-aqua,.tap-hover-aqua:hover{color:#000!important;background-color:#00ffff!important}
+.tap-blue,.tap-hover-blue:hover{color:#fff!important;background-color:#2196F3!important}
+.tap-light-blue,.tap-hover-light-blue:hover{color:#000!important;background-color:#87CEEB!important}
+.tap-brown,.tap-hover-brown:hover{color:#fff!important;background-color:#795548!important}
+.tap-cyan,.tap-hover-cyan:hover{color:#000!important;background-color:#00bcd4!important}
+.tap-blue-grey,.tap-hover-blue-grey:hover,.tap-blue-gray,.tap-hover-blue-gray:hover{color:#fff!important;background-color:#607d8b!important}
+.tap-green,.tap-hover-green:hover{color:#fff!important;background-color:#4CAF50!important}
+.tap-light-green,.tap-hover-light-green:hover{color:#000!important;background-color:#8bc34a!important}
+.tap-indigo,.tap-hover-indigo:hover{color:#fff!important;background-color:#3f51b5!important}
+.tap-khaki,.tap-hover-khaki:hover{color:#000!important;background-color:#f0e68c!important}
+.tap-lime,.tap-hover-lime:hover{color:#000!important;background-color:#cddc39!important}
+.tap-orange,.tap-hover-orange:hover{color:#000!important;background-color:#ff9800!important}
+.tap-deep-orange,.tap-hover-deep-orange:hover{color:#fff!important;background-color:#ff5722!important}
+.tap-pink,.tap-hover-pink:hover{color:#fff!important;background-color:#e91e63!important}
+.tap-purple,.tap-hover-purple:hover{color:#fff!important;background-color:#9c27b0!important}
+.tap-deep-purple,.tap-hover-deep-purple:hover{color:#fff!important;background-color:#673ab7!important}
+.tap-red,.tap-hover-red:hover{color:#fff!important;background-color:#f44336!important}
+.tap-sand,.tap-hover-sand:hover{color:#000!important;background-color:#fdf5e6!important}
+.tap-teal,.tap-hover-teal:hover{color:#fff!important;background-color:#009688!important}
+.tap-yellow,.tap-hover-yellow:hover{color:#000!important;background-color:#ffeb3b!important}
+.tap-white,.tap-hover-white:hover{color:#000!important;background-color:#fff!important}
+.tap-black,.tap-hover-black:hover{color:#fff!important;background-color:#000!important}
+.tap-grey,.tap-hover-grey:hover,.tap-gray,.tap-hover-gray:hover{color:#000!important;background-color:#9e9e9e!important}
+.tap-light-grey,.tap-hover-light-grey:hover,.tap-light-gray,.tap-hover-light-gray:hover{color:#000!important;background-color:#f1f1f1!important}
+.tap-dark-grey,.tap-hover-dark-grey:hover,.tap-dark-gray,.tap-hover-dark-gray:hover{color:#fff!important;background-color:#616161!important}
+.tap-asphalt,.tap-hover-asphalt:hover{color:#fff!important;background-color:#343a40!important}
+.tap-crimson,.tap-hover-crimson:hover{color:#fff!important;background-color:#a20025!important}
+.tap-cobalt,.tap-hover-cobalt:hover{color:#fff!important;background-color:#0050ef!important}
+.tap-emerald,.tap-hover-emerald:hover{color:#fff!important;background-color:#008a00!important}
+.tap-olive,.tap-hover-olive:hover{color:#fff!important;background-color:#6d8764!important}
+.tap-paper,.tap-hover-paper:hover{color:#000!important;background-color:#f8f9fa!important}
+.tap-sienna,.tap-hover-sienna:hover{color:#fff!important;background-color:#a0522d!important}
+.tap-taupe,.tap-hover-taupe:hover{color:#fff!important;background-color:#87794e!important}
+.tap-danger{color:#fff!important;background-color:#dd0000!important}
+.tap-note{color:#000!important;background-color:#fff599!important}
+.tap-info{color:#fff!important;background-color:#0a6fc2!important}
+.tap-warning{color:#000!important;background-color:#ffb305!important}
+.tap-success{color:#fff!important;background-color:#008a00!important}
+.tap-pale-red,.tap-hover-pale-red:hover{color:#000!important;background-color:#ffdddd!important}
+.tap-pale-green,.tap-hover-pale-green:hover{color:#000!important;background-color:#ddffdd!important}
+.tap-pale-yellow,.tap-hover-pale-yellow:hover{color:#000!important;background-color:#ffffcc!important}
+.tap-pale-blue,.tap-hover-pale-blue:hover{color:#000!important;background-color:#ddffff!important}
+.tap-text-amber,.tap-hover-text-amber:hover{color:#ffc107!important}
+.tap-text-aqua,.tap-hover-text-aqua:hover{color:#00ffff!important}
+.tap-text-blue,.tap-hover-text-blue:hover{color:#2196F3!important}
+.tap-text-light-blue,.tap-hover-text-light-blue:hover{color:#87CEEB!important}
+.tap-text-brown,.tap-hover-text-brown:hover{color:#795548!important}
+.tap-text-cyan,.tap-hover-text-cyan:hover{color:#00bcd4!important}
+.tap-text-blue-grey,.tap-hover-text-blue-grey:hover,.tap-text-blue-gray,.tap-hover-text-blue-gray:hover{color:#607d8b!important}
+.tap-text-green,.tap-hover-text-green:hover{color:#4CAF50!important}
+.tap-text-light-green,.tap-hover-text-light-green:hover{color:#8bc34a!important}
+.tap-text-indigo,.tap-hover-text-indigo:hover{color:#3f51b5!important}
+.tap-text-khaki,.tap-hover-text-khaki:hover{color:#b4aa50!important}
+.tap-text-lime,.tap-hover-text-lime:hover{color:#cddc39!important}
+.tap-text-orange,.tap-hover-text-orange:hover{color:#ff9800!important}
+.tap-text-deep-orange,.tap-hover-text-deep-orange:hover{color:#ff5722!important}
+.tap-text-pink,.tap-hover-text-pink:hover{color:#e91e63!important}
+.tap-text-purple,.tap-hover-text-purple:hover{color:#9c27b0!important}
+.tap-text-deep-purple,.tap-hover-text-deep-purple:hover{color:#673ab7!important}
+.tap-text-red,.tap-hover-text-red:hover{color:#f44336!important}
+.tap-text-sand,.tap-hover-text-sand:hover{color:#fdf5e6!important}
+.tap-text-teal,.tap-hover-text-teal:hover{color:#009688!important}
+.tap-text-yellow,.tap-hover-text-yellow:hover{color:#d2be0e!important}
+.tap-text-white,.tap-hover-text-white:hover{color:#fff!important}
+.tap-text-black,.tap-hover-text-black:hover{color:#000!important}
+.tap-text-grey,.tap-hover-text-grey:hover,.tap-text-gray,.tap-hover-text-gray:hover{color:#757575!important}
+.tap-text-light-grey,.tap-hover-text-light-grey:hover,.tap-text-light-gray,.tap-hover-text-light-gray:hover{color:#f1f1f1!important}
+.tap-text-dark-grey,.tap-hover-text-dark-grey:hover,.tap-text-dark-gray,.tap-hover-text-dark-gray:hover{color:#3a3a3a!important}
+.tap-border-amber,.tap-hover-border-amber:hover{border-color:#ffc107!important}
+.tap-border-aqua,.tap-hover-border-aqua:hover{border-color:#00ffff!important}
+.tap-border-blue,.tap-hover-border-blue:hover{border-color:#2196F3!important}
+.tap-border-light-blue,.tap-hover-border-light-blue:hover{border-color:#87CEEB!important}
+.tap-border-brown,.tap-hover-border-brown:hover{border-color:#795548!important}
+.tap-border-cyan,.tap-hover-border-cyan:hover{border-color:#00bcd4!important}
+.tap-border-blue-grey,.tap-hover-border-blue-grey:hover,.tap-border-blue-gray,.tap-hover-border-blue-gray:hover{border-color:#607d8b!important}
+.tap-border-green,.tap-hover-border-green:hover{border-color:#4CAF50!important}
+.tap-border-light-green,.tap-hover-border-light-green:hover{border-color:#8bc34a!important}
+.tap-border-indigo,.tap-hover-border-indigo:hover{border-color:#3f51b5!important}
+.tap-border-khaki,.tap-hover-border-khaki:hover{border-color:#f0e68c!important}
+.tap-border-lime,.tap-hover-border-lime:hover{border-color:#cddc39!important}
+.tap-border-orange,.tap-hover-border-orange:hover{border-color:#ff9800!important}
+.tap-border-deep-orange,.tap-hover-border-deep-orange:hover{border-color:#ff5722!important}
+.tap-border-pink,.tap-hover-border-pink:hover{border-color:#e91e63!important}
+.tap-border-purple,.tap-hover-border-purple:hover{border-color:#9c27b0!important}
+.tap-border-deep-purple,.tap-hover-border-deep-purple:hover{border-color:#673ab7!important}
+.tap-border-red,.tap-hover-border-red:hover{border-color:#f44336!important}
+.tap-border-sand,.tap-hover-border-sand:hover{border-color:#fdf5e6!important}
+.tap-border-teal,.tap-hover-border-teal:hover{border-color:#009688!important}
+.tap-border-yellow,.tap-hover-border-yellow:hover{border-color:#ffeb3b!important}
+.tap-border-white,.tap-hover-border-white:hover{border-color:#fff!important}
+.tap-border-black,.tap-hover-border-black:hover{border-color:#000!important}
+.tap-border-grey,.tap-hover-border-grey:hover,.tap-border-gray,.tap-hover-border-gray:hover{border-color:#9e9e9e!important}
+.tap-border-light-grey,.tap-hover-border-light-grey:hover,.tap-border-light-gray,.tap-hover-border-light-gray:hover{border-color:#f1f1f1!important}
+.tap-border-dark-grey,.tap-hover-border-dark-grey:hover,.tap-border-dark-gray,.tap-hover-border-dark-gray:hover{border-color:#616161!important}
+.tap-border-pale-red,.tap-hover-border-pale-red:hover{border-color:#ffe7e7!important}.tap-border-pale-green,.tap-hover-border-pale-green:hover{border-color:#e7ffe7!important}
+.tap-border-pale-yellow,.tap-hover-border-pale-yellow:hover{border-color:#ffffcc!important}.tap-border-pale-blue,.tap-hover-border-pale-blue:hover{border-color:#e7ffff!important}

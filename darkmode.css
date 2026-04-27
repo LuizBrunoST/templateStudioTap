@@ -1,0 +1,26 @@
+:root {
+    --tap-bg: #ffffff;
+    --tap-text: #000000;
+    --tap-surface: #f1f1f1;
+}
+
+.tap-dark {
+    --tap-bg: #061018;
+    --tap-text: #ffffff;
+    --tap-surface: #17242e;
+}
+
+.tap-body {
+    background: var(--tap-bg);
+    color: var(--tap-text);
+}
+
+.tap-white {
+    background: var(--tap-surface);
+    color: var(--tap-text);
+}
+
+.tap-light-grey {
+    background: var(--tap-surface);
+    color: var(--tap-text);
+}
